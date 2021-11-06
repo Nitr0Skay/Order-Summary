@@ -18,13 +18,13 @@
 
     :root {
       /* Primary Colors */
-      --paleBlue: 225, 100%, 94%;
-      --brightBlue: 245, 75%, 52%;
+      --paleBlue: hsl(225, 100%, 94%);
+      --brightBlue: hsl(245, 75%, 52%);
 
       /* Neutral Colors */
-      --veryPaleBlue: 225, 100%, 98%;
-      --desaturatedBlue: 224, 23%, 55%;
-      --darkBlue: 223, 47%, 23%;
+      --veryPaleBlue: hsl(225, 100%, 98%);
+      --desaturatedBlue: hsl(224, 23%, 55%);
+      --darkBlue: hsl(223, 47%, 23%);
 
       /* --colorName: Hue, Saturation, Lightness; */
       /* I haven't idea why is above comment visible in the Code. You can see it in DevTools  */
@@ -41,19 +41,29 @@
     body {
       box-sizing: border-box;
       font-family: 'Red Hat Display', sans-serif;
-      background: hsl(var(--paleBlue));
+      background: var(--paleBlue);
     }
 
     p {
       font-size: 16px;
-      color: hsl(var(--desaturatedBlue));
+      color: var(--desaturatedBlue);
       text-align: center;
       margin: 0 1.5em;
     }
 
+    header {
+      clip: rect(0 0 0 0); 
+      clip-path: inset(50%);
+      height: 1px;
+      overflow: hidden;
+      position: absolute;
+      white-space: nowrap; 
+      width: 1px;
+    }
+
     h2, h3 {
       font-weight: 900;
-      color: hsl(var(--darkBlue));
+      color: var(--darkBlue);
     }
 
     h2 {
@@ -87,7 +97,7 @@
     /*  Styles for List of Available Services  */
 
     .planList {
-      background: hsl(var(--veryPaleBlue)) url(images/icon-music.svg) no-repeat 20px center;
+      background: var(--veryPaleBlue) url(images/icon-music.svg) no-repeat 20px center;
       padding: 20px;
       margin: 20px auto;
       text-align: right;
@@ -117,7 +127,7 @@
     .changeLink {
       float: right;
       width: 50%;
-      color: hsl(var(--brightBlue));
+      color: var(--brightBlue);
       font-weight: 900;
       transform: translate(0, 50%);
     }
@@ -125,18 +135,18 @@
     .paymentLink {
       font-weight: 700;
       color: white;
-      background-color: hsl(var(--brightBlue));
+      background-color: var(--brightBlue);
       padding: 10px;
       text-align: center;
       text-decoration: none;
       border-radius: 10px;
-      box-shadow: hsla(var(--brightBlue), 0.25) 0 20px 25px -5px;
+      box-shadow: hsla(245, 75%, 52%, 0.25) 0 20px 25px -5px;
     }
 
     .cancelLink {
       font-weight: 700;
       text-decoration: none;
-      color: hsl(var(--desaturatedBlue));
+      color: var(--desaturatedBlue);
       text-align: center;
       margin-top: 25px;
     }
@@ -154,7 +164,7 @@
     }
 
     .cancelLink:hover {
-      color: hsl(var(--darkBlue));
+      color: var(--darkBlue);
       font-weight: 900;
     }
 
@@ -163,49 +173,54 @@
 
     @media (width: 375px) {
       body {
-        background: hsl(var(--paleBlue)) url(images/pattern-background-mobile.svg) no-repeat center;
+        background: var(--paleBlue) url(images/pattern-background-mobile.svg) no-repeat center;
       }
     }
 
     @media (width: 1440px) {
       body {
-        background: hsl(var(--paleBlue)) url(images/pattern-background-desktop.svg) no-repeat center;
+        background: var(--paleBlue) url(images/pattern-background-desktop.svg) no-repeat center;
       }
     }
 
   </style>
 </head>
 <body>
+  <header id="header" class="header">
+    <h1 id="page-title" class="page-title"> <a href="index.html"> Frontend Mentor - Order Summary Challenge by Nitr0Skay </a> </h1>
+  </header>
 
-  <section class="order-component">
-    <div class="component-content">
-      <h2> Order Summary </h2>
+  <main>
+    <section class="order-component">
+      <div class="component-content">
+        <h2> Order Summary </h2>
 
-      <p>
-        You can now listen to millions of songs, audiobooks, and podcasts on any 
-        device anywhere you like!
-      </p>
+        <p>
+          You can now listen to millions of songs, audiobooks, and podcasts on any 
+          device anywhere you like!
+        </p>
 
-      <ul class="planList">
-        <li>
-          <div>
-	    <h3> Annual Plan </h3>
-            <p> $59.99/year </p>
-	  </div>
+        <ul class="planList">
+          <li>
+            <div>
+	      <h3> Annual Plan </h3>
+              <p> $59.99/year </p>
+	    </div>
 
-          <a href="#" class="changeLink"> Change </a>
-        </li>
-      </ul>
+            <a href="#" class="changeLink"> Change </a>
+          </li>
+        </ul>
 
-      <a href="#" class="paymentLink"> Proceed to Payment </a>
-      <a href="#" class="cancelLink"> Cancel Order </a>
-    </div>
-  </section>
+        <a href="#" class="paymentLink"> Proceed to Payment </a>
+        <a href="#" class="cancelLink"> Cancel Order </a>
+      </div>
+    </section>
+  </main>
   
-  <div class="attribution">
+  <footer class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+    Coded by <a href="https://www.frontendmentor.io/profile/Nitr0Skay"> Nitr0Skay </a>.
+  </footer>
 
 </body>
 </html>
